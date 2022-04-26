@@ -4,6 +4,8 @@ import math
 import pandas as pd
 import streamlit as st
 
+st.set_page_config(page_title="Marine Protected Areas", page_icon=🌊, layout="centered", initial_sidebar_state="auto", menu_items=None)
+
 """
 # Welcome to Marine Protected Areas Project!
 This website is here to introduce you to Marine protected areas and guide you through the Flickr dataset about the MPAs...
