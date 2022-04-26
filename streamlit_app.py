@@ -13,7 +13,6 @@ This website is here to introduce you to Marine protected areas and guide you th
 Below you can see how awesome the Streamlit app is :P
 """
 
-
 with st.echo(code_location='below'):
     total_points = st.slider("Number of points in spiral", 1, 5000, 2000)
     num_turns = st.slider("Number of turns in spiral", 1, 100, 9)
@@ -34,3 +33,32 @@ with st.echo(code_location='below'):
     st.altair_chart(alt.Chart(pd.DataFrame(data), height=500, width=500)
         .mark_circle(color='#0068c9', opacity=0.5)
         .encode(x='x:Q', y='y:Q'))
+        
+st.markdown("## Introduction")
+'''
+Text for intro
+'''
+st.markdown("## Basic statistics")
+'''
+Text for basic stats
+'''
+st.markdown("## Data Analysis")
+'''
+Text for data analysis
+'''
+st.markdown("### Temporal Data")
+'''
+Text for Temporal data
+'''
+st.markdown("### Spatial Data")
+'''
+Text for spatial data
+'''
+st.markdown("### Machine Learning")
+'''
+Text for machine learning
+'''
+st.markdown("### Conclusion")
+'''
+Text for conclusion
+'''
