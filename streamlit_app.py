@@ -32,7 +32,7 @@ import streamlit as st
 # for each WDPAID, the number of unique users and photo per users per year for each treatment level
 #result = pyreadr.read_r(r'_MPA cultural ecosystem services/alldata_user_photo_share.RData') 
 #df2 = result[list(result.keys())[0]]
-%ls
+
 # read the third file
 # text data associated with photos used for the STM. the photo ID is the unique flickr id of the photo, the owner ID was removed.
 df3 = pd.read_csv('_MPA/photo_description_STM.csv', encoding = 'cp1252', engine = 'python', on_bad_lines = 'warn')
