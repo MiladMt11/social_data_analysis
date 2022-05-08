@@ -3,29 +3,29 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
-import bokeh
-from bokeh.plotting import figure
-from bokeh.io import show, output_notebook, reset_output
-from bokeh.models import  ColumnDataSource, Legend, HoverTool, Title
-import pyreadr
-import pandas as pd
-import numpy as np
-import re
-import matplotlib.pyplot as plt
-import matplotlib
-import seaborn as sns
-import warnings
-from pandas.api.types import CategoricalDtype
-from sklearn.preprocessing import LabelEncoder
-from sklearn.model_selection import train_test_split
-from imblearn.under_sampling import RandomUnderSampler
-from sklearn.ensemble import RandomForestClassifier
-from sklearn import metrics, tree
-from sklearn.metrics import ConfusionMatrixDisplay
-from bokeh.io import output_file, show
-from bokeh.plotting import figure
-from bokeh.layouts import layout
-from bokeh.models.widgets import Tabs, Panel
+#import bokeh
+#from bokeh.plotting import figure
+#from bokeh.io import show, output_notebook, reset_output
+#from bokeh.models import  ColumnDataSource, Legend, HoverTool, Title
+#import pyreadr
+#import pandas as pd
+#import numpy as np
+#import re
+#import matplotlib.pyplot as plt
+#import matplotlib
+#import seaborn as sns
+#import warnings
+#from pandas.api.types import CategoricalDtype
+#from sklearn.preprocessing import LabelEncoder
+#from sklearn.model_selection import train_test_split
+#from imblearn.under_sampling import RandomUnderSampler
+#from sklearn.ensemble import RandomForestClassifier
+#from sklearn import metrics, tree
+#from sklearn.metrics import ConfusionMatrixDisplay
+#from bokeh.io import output_file, show
+#from bokeh.plotting import figure
+#from bokeh.layouts import layout
+#from bokeh.models.widgets import Tabs, Panel
 
 #Data preprocessing
 # read the second file
