@@ -46,7 +46,7 @@ included = list(df4['WDPAID'][df4['included']==True])
 
 # read the fifth file
 # total photo count for retained MPAs and associated control areas per year included MPA size
-df5 = pd.read_csv('_MPA}/total_photos_count_share.csv')
+df5 = pd.read_csv('_MPA/total_photos_count_share.csv')
 
 # fill nan values with zeroes
 df2['user.count'] = df2['user.count'].fillna(0)
