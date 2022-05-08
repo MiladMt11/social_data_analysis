@@ -49,8 +49,8 @@ included = list(df4['WDPAID'][df4['included']==True])
 df5 = pd.read_csv('_MPA/total_photos_count_share.csv')
 
 # fill nan values with zeroes
-df2['user.count'] = df2['user.count'].fillna(0)
-df2['photouser.count'] = df2['photouser.count'].fillna(0)
+#df2['user.count'] = df2['user.count'].fillna(0)
+#df2['photouser.count'] = df2['photouser.count'].fillna(0)
 
 #convert WDPA_PID to numbers
 df2['WDPA_PID'] = df2['WDPA_PID'].astype('str').str.extractall('(\d+)').unstack().fillna('').sum(axis=1).astype(int)
