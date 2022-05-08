@@ -35,14 +35,14 @@ import streamlit as st
 
 # read the third file
 # text data associated with photos used for the STM. the photo ID is the unique flickr id of the photo, the owner ID was removed.
-df3 = pd.read_csv('_MPA cultural ecosystem services/photo_description_STM.csv', encoding = 'cp1252', engine = 'python', on_bad_lines = 'warn')
+#df3 = pd.read_csv('_MPA cultural ecosystem services/photo_description_STM.csv', encoding = 'cp1252', engine = 'python', on_bad_lines = 'warn')
 
 # read the fourth file
 # this file includes the list of MPA WDPAID and whether the MPA was included in the analysis of total photo counts or not
 #df4 = pd.read_csv('_MPA cultural ecosystem services/MPAincluded_share.csv')
 
 # list of all the included WDPAID's
-included = list(df4['WDPAID'][df4['included']==True])
+#included = list(df4['WDPAID'][df4['included']==True])
 
 # read the fifth file
 # total photo count for retained MPAs and associated control areas per year included MPA size
