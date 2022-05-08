@@ -7,7 +7,7 @@ import streamlit as st
 #from bokeh.plotting import figure
 #from bokeh.io import show, output_notebook, reset_output
 #from bokeh.models import  ColumnDataSource, Legend, HoverTool, Title
-#import pyreadr
+import pyreadr
 #import pandas as pd
 #import numpy as np
 #import re
@@ -30,8 +30,8 @@ import streamlit as st
 #Data preprocessing
 # read the second file
 # for each WDPAID, the number of unique users and photo per users per year for each treatment level
-#result = pyreadr.read_r(r'_MPA cultural ecosystem services/alldata_user_photo_share.RData') 
-#df2 = result[list(result.keys())[0]]
+result = pyreadr.read_r(r'_MPA cultural ecosystem services/alldata_user_photo_share.RData') 
+df2 = result[list(result.keys())[0]]
 
 # read the third file
 # text data associated with photos used for the STM. the photo ID is the unique flickr id of the photo, the owner ID was removed.
@@ -39,14 +39,14 @@ import streamlit as st
 
 # read the fourth file
 # this file includes the list of MPA WDPAID and whether the MPA was included in the analysis of total photo counts or not
-df4 = pd.read_csv('MPAincluded_share.csv')
+df4 = pd.read_csv('_MPA/MPAincluded_share.csv')
 
 # list of all the included WDPAID's
-#included = list(df4['WDPAID'][df4['included']==True])
+included = list(df4['WDPAID'][df4['included']==True])
 
 # read the fifth file
 # total photo count for retained MPAs and associated control areas per year included MPA size
-#df5 = pd.read_csv('_MPA}/total_photos_count_share.csv')
+df5 = pd.read_csv('_MPA}/total_photos_count_share.csv')
 
 # fill nan values with zeroes
 df2['user.count'] = df2['user.count'].fillna(0)
