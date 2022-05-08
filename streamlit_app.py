@@ -30,7 +30,7 @@ import pyreadr
 #Data preprocessing
 # read the second file
 # for each WDPAID, the number of unique users and photo per users per year for each treatment level
-result = pyreadr.read_r(r'_MPA cultural ecosystem services/alldata_user_photo_share.RData') 
+result = pyreadr.read_r(r'_MPA/alldata_user_photo_share.RData') 
 df2 = result[list(result.keys())[0]]
 
 # read the third file
