@@ -3,6 +3,7 @@ import altair as alt
 import math
 import pandas as pd
 import streamlit as st
+import bokeh
 from bokeh.plotting import figure
 from bokeh.io import show, output_notebook, reset_output
 from bokeh.models import  ColumnDataSource, Legend, HoverTool, Title
