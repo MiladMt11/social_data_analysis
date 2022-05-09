@@ -27,30 +27,48 @@ from bokeh.plotting import figure
 from bokeh.layouts import layout
 from bokeh.models.widgets import Tabs, Panel
 
+st.set_page_config(page_title="Marine Protected Areas", page_icon="🌊", layout="centered", initial_sidebar_state="auto", menu_items=None)
+
 #Data preprocessing
 # read the second file
 # for each WDPAID, the number of unique users and photo per users per year for each treatment level
-result = pyreadr.read_r(r'_MPA/alldata_userdays_share.Rdata') 
-df2 = result[list(result.keys())[0]]
-
+@st.cache
+def load_df2():
+    result = pyreadr.read_r(r'_MPA/alldata_userdays_share.Rdata') 
+    df2 = result[list(result.keys())[0]]
+    return df2
+    
+df2 = load_df2()
 # read the third file
 # text data associated with photos used for the STM. the photo ID is the unique flickr id of the photo, the owner ID was removed.
-
-zf = zipfile.ZipFile('_MPA/photo_description_STM.zip') 
-#df3 = pd.read_csv(zf.open('intfile.csv'))
-df3 = pd.read_csv(zf.open('photo_description_STM.csv'), encoding = 'cp1252', engine = 'python', on_bad_lines = 'warn')
+@st.cache
+def load_df3():
+    zf = zipfile.ZipFile('_MPA/photo_description_STM.zip') 
+    #df3 = pd.read_csv(zf.open('intfile.csv'))
+    df3 = pd.read_csv(zf.open('photo_description_STM.csv'), encoding = 'cp1252', engine = 'python', on_bad_lines = 'warn')
+    return df3
+    
+df3 = load_df3()
 
 # read the fourth file
 # this file includes the list of MPA WDPAID and whether the MPA was included in the analysis of total photo counts or not
-df4 = pd.read_csv('_MPA/MPAincluded_share.csv')
-
+@st.cache
+def load_df4():
+    df4 = pd.read_csv('_MPA/MPAincluded_share.csv')
+    return df4
+    
+df4 = load_df4()
 # list of all the included WDPAID's
 included = list(df4['WDPAID'][df4['included']==True])
 
 # read the fifth file
 # total photo count for retained MPAs and associated control areas per year included MPA size
-df5 = pd.read_csv('_MPA/total_photos_count_share.csv')
-
+@st.cache
+def load_df5():
+    df5 = pd.read_csv('_MPA/total_photos_count_share.csv')
+    return df5
+    
+df5 = load_df5()
 # fill nan values with zeroes
 #df2['user.count'] = df2['user.count'].fillna(0)
 #df2['photouser.count'] = df2['photouser.count'].fillna(0)
@@ -130,7 +148,8 @@ cat_type_wday = CategoricalDtype(categories = weekdays, ordered = True)
 df3_con['weekday'] = df3_con['weekday'].astype(cat_type_wday)
 
 
-st.set_page_config(page_title="Marine Protected Areas", page_icon="🌊", layout="centered", initial_sidebar_state="auto", menu_items=None)
+
+
 st.image("images.jpg", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 """
 # Welcome to Marine Protected Areas Project!
