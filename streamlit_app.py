@@ -177,7 +177,7 @@ def create_bokeh(df_,col):
     #Define the columns to use for each bar
     bar_cols = ['control', 'MPA']
     #Create an empty figure
-    p = figure(x_range=list(df_[col]), plot_width = 800, plot_height = 500, title = 'N. samples by '+col,
+    p = figure(x_range=list(df_[col]), plot_width = 870, plot_height = 500, title = 'N. samples by '+col,
                x_axis_label = col , y_axis_label = 'N. of samples') 
     
     p.add_layout(Title(text="Figure 1: Interactive bar plot showing Number of Samples by year, month, day, weekday, hour . ", align="left"), "below")
