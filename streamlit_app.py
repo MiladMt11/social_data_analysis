@@ -150,7 +150,7 @@ df3_con['weekday'] = df3_con['weekday'].astype(cat_type_wday)
 
 
 
-st.image("images.jpg", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+st.image("image.jpg", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 """
 # Welcome to Marine Protected Areas Project!
 This website is here to introduce you to Marine protected areas and guide you through the Flickr dataset about the MPAs...
@@ -200,7 +200,7 @@ def create_bokeh(df_,col):
                x_axis_label = col , y_axis_label = 'N. of samples') 
     
     p.add_layout(Title(text="Figure 1: Interactive bar plot showing Number of Samples by year, month, day, weekday, hour . ", align="left"), "below")
-    colors = ['red', 'blue']
+    colors = ['salmon', 'navy']
     bar ={} 
     for indx,i in enumerate(bar_cols):
         #Add bars by using p.var
