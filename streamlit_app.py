@@ -32,7 +32,7 @@ st.set_page_config(page_title="Marine Protected Areas", page_icon="🌊", layout
 #Data preprocessing
 # read the second file
 # for each WDPAID, the number of unique users and photo per users per year for each treatment level
-@st.cache
+@st.cache(allow_output_mutation=True)
 def load_df2():
     result = pyreadr.read_r(r'_MPA/alldata_userdays_share.Rdata') 
     df2 = result[list(result.keys())[0]]
