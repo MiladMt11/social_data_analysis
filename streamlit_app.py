@@ -150,7 +150,7 @@ df3_con['weekday'] = df3_con['weekday'].astype(cat_type_wday)
 
 
 
-st.image("image.jpg", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+st.image("images.jpg", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 """
 # Welcome to Marine Protected Areas Project!
 This website is here to introduce you to Marine protected areas and guide you through the Flickr dataset about the MPAs...
