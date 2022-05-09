@@ -27,7 +27,7 @@ from bokeh.plotting import figure
 from bokeh.layouts import layout
 from bokeh.models.widgets import Tabs, Panel
 
-st.set_page_config(page_title="Marine Protected Areas", page_icon="🌊", layout="centered", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="Marine Protected Areas", page_icon="🌊", layout="wide", initial_sidebar_state="auto", menu_items=None)
 
 #Data preprocessing
 # read the second file
