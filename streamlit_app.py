@@ -156,7 +156,7 @@ st.image("images.jpg", caption=None, width=None, use_column_width="always", clam
 This website is here to introduce you to Marine protected areas and guide you through the Flickr dataset about the MPAs...
 
 """
-
+st.markdown("# Do we (Flickr people) like Marine Protected Areas more than other Areas? And how can we help protect them?")
         
 st.markdown("## Introduction")
 '''
