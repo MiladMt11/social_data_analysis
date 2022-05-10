@@ -54,7 +54,38 @@ source_code = HtmlFile.read()
 print(source_code)
 components.html(source_code, height = 600)
 
+''' 
+The analysis of number of photos taken in each month of the year shows a decreasing trend throughout the year. Most of the photos were taken in the first 6,7 months of the year. This might be caused due to the fact that in the first months of the year there is more daylight during the day, hence photographers could have more time and also better lighting for taking the pictures.
 
+A nearly steady trend is also observable in the number of photos taken along different days of the month.
+
+Going through the weekday plot, it is clear that the number of photos taken during weekdays remained constant with very small fluctuations. On the other hand, there is a noticeable increase during the weekend. This increase, actually reasons the fact that people have more time on weekends to go to MPA or controlled areas and take pictures and post them on Flickr.
+
+Analysing the number of photos taken in the different hours of the day, a gradual increase is apparent from 5 am in the morning and this growth continues till 12 at noon when it reaches the pick and then starts to decrease throughout the rest of the day. The given explanation for this rise and fall might be that the photographers took the photos mostly during the day because of the proper amount of light and also perhaps there are some restrictions to access those areas at night.
+
+Also, it is obvious that 'control' areas have more number of photos than 'MPA' areas. This might happen due to the limitations to access 'MPA' locations.
+
+
+Finally, there is an abnormally high number of photos in January, on the first day of the month and at 1am. Let's find why, by looking more in details at the time of photos.
+'''
+
+st.image("figs/histogram between 1 and 2 am.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+
+'''
+As you can see above, there is an abnormally high number of photos taken at exactly 1am on the 1st of January and the same can be observed on the other days, but not for other hours (see following plot). This might be because the default value set on Flickr for the time at which a photo was taken is 1am.
+'''
+
+st.image("figs/histogram between 1 and 2 january.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+
+'''
+Let's go further and check number of photos in different days of last month of 2018 and first month of 2019
+'''
+
+st.image("figs/histogram between dec and jan.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+
+'''
+Such a big and abrupt difference in the number of photos between December and January might be due to the hypothesis that the default month at which a photo was taken is set to January on Flickr.
+'''
 
 st.markdown("### Where Flickr users frequently going?")
 '''
