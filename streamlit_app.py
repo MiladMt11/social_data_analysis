@@ -5,24 +5,29 @@ st.set_page_config(page_title="Marine Protected Areas", page_icon="🌊", layout
 
 
 st.image("images.jpg", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
-"""
-# Welcome to Marine Protected Areas Project!
-This website is here to introduce you to Marine protected areas and guide you through the Flickr dataset about the MPAs...
 
-"""
-st.markdown("# Do Flickr people like Marine Protected Areas more than other Areas? And how can we help in their preservation?")
+st.markdown("# How do people interact with the Marine Protected Areas?")
         
 #st.markdown("## Introduction")
 '''
-Marine protected areas (MPAs) are advocated as a key tool to manage the restoration and sustainable use of the oceans[1]. For the scope of this project we used the [datasets](https://data.mendeley.com/datasets/dmk97w5vrr/1?fbclid=IwAR1uZzFUyJAfMBtbBFNPJ-Dn28Qi3l3blThaEPDsgH9DUHO96DZCeUfse-E) from the article [OneEarth: Marine Protected Areas provide more cultural ecosystem services than other adjacent coastal areas](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3720309), and they include information about Flickr posts, that were made in Marine Protected Areas (MPAs) around the globe, but also posts that were made in control areas (areas with similar characteristics as MPAs, but are not MPAs). So for each Marine Protected Area, a control area near it exists with similar characteristics. 
+Marine protected areas (MPAs) are advocated as a key tool to manage the restoration and sustainable use of the oceans [1]. They are also assumed to confer cultural ecosystems services (CES), which are defined as “intangible benefits provided by ecosystems, such as spiritual enrichment, cognitive development, reflection, recreation, and aesthetic experiences”. To test this hypothesis, researchers in [OneEarth: Marine Protected Areas provide more cultural ecosystem services than other adjacent coastal areas](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3720309) sampled millions of Flickr photos taken at MPA sites and adjacent control sites. The results showed that more photos were posted, by more users, from within MPAs than within adjacent control sites. In addition, MPA photos focused more on wildlife and landscapes and were described more positively and were more liked. In our project, we used the [datasets](https://data.mendeley.com/datasets/dmk97w5vrr/1?fbclid=IwAR1uZzFUyJAfMBtbBFNPJ-Dn28Qi3l3blThaEPDsgH9DUHO96DZCeUfse-E) from this article to answer a broader question: How do people interact with coastal areas?
+
 '''
-st.markdown("## What Marine Protected Areas (MPAs) actually are ?")
+st.markdown("## What is the dataset that we are dealing with?")
 '''
+By using the datasets from the article mentioned above, we have:
+* 1M+ photo descriptions (including time and location) with 14 variables (124 MB)
+* Additional datasets related to protected areas
+
 Our dataset consists of more than 13000 locations for marine protected areas (13262 different WDPA_PID).
-As we can see in the plot below, the Flickr users, are posting mostly pictures from Europe and Central Asia:
+As we can see in the plot below, the Flickr users, are mostly posting pictures from Europe and Central Asia:
 '''
 
 st.image("figs/count by continent.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+
+'''
+
+'''
 st.image("figs/area vs continent.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 '''
 In terms of countries, most Marine Protected Areas are Breat Britain's territories, then Swedish, and then USA's: '''
@@ -69,11 +74,15 @@ st.image("figs/Choropleth map.png", caption=None, width=None, use_column_width="
 
 '''
 Text for UK spatial data
+
+*The interactive plot takes some time to load, if you want to use it, press the `Show` button below, and wait some seconds:
 '''
-HtmlFile = open("htmls/GBRplotly.html", 'r', encoding='utf-8')
-source_code = HtmlFile.read() 
-print(source_code)
-components.html(source_code, height = 600)
+if st.button('Show'):
+     #st.write('Why hello there')
+    HtmlFile = open("htmls/GBRplotly.html", 'r', encoding='utf-8')
+    source_code = HtmlFile.read() 
+    print(source_code)
+    components.html(source_code, height = 600)
 
 '''
 
