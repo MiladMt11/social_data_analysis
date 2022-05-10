@@ -28,7 +28,7 @@ from bokeh.layouts import layout
 from bokeh.models.widgets import Tabs, Panel
 import folium
 from folium.plugins import HeatMap, HeatMapWithTime
-from streamlit_folium import st_folium
+from streamlit_folium import st_folium, folium_static
 
 st.set_page_config(page_title="Marine Protected Areas", page_icon="🌊", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
@@ -373,8 +373,9 @@ map_hooray = folium.Map(location=[0, 0],
 heat_df = df3[['longitude', 'latitude']]
 heat_data = [[row['latitude'],row['longitude']] for index, row in heat_df.iterrows()]
 HeatMap(heat_data, radius = 9, blur = 5, min_opacity = 0.2).add_to(map_hooray)
-#map_hooray
-st_data = st_folium(map_hooray)
+folium_static(map_hooray)
+
+
 st.markdown("### Machine Learning")
 '''
 Text for machine learning
