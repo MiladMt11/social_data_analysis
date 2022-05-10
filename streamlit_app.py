@@ -86,21 +86,23 @@ st.image("figs/histogram between dec and jan.png", caption=None, width=None, use
 '''
 Such a big and abrupt difference in the number of photos between December and January might be due to the hypothesis that the default month at which a photo was taken is set to January on Flickr.
 '''
-'''
-aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
-'''
+
 st.markdown("### Where Flickr users frequently going?")
 '''
 The plot below, present us the MP areas where people are visiting the most. By the color of the area, we are able to understand how many posts have been made from there.
 
-As we can see in the map below, the biggest (in terms of area) MPAs, are small island in the middle of the Oceans, and some ABNJs. Thus, from their colors, we observe that they do not have many postings made from those areas. Specifically, the areas with a big amount of posts, are so small, that we cannot distinguish them in the global map, and we need to zoom in, in order to find them. Below, we created an interactive map, where we can see the top 100 (in terms of postings) areas in the Great Britain.
+As we can see in the map below, the biggest (in terms of area) MPAs, are small island in the middle of the Oceans, and some ABNJs. Thus, from their colors, we observe that they do not have many postings made from those areas. Specifically, the areas with a big amount of posts, are so small, that we cannot distinguish them in the global map, and we need to zoom in, in order to find them.
 '''
 st.image("figs/Choropleth map.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 
 '''
-Text for UK spatial data
+Below, we created an interactive map, where we can see the top 100 (in terms of postings) areas in the Great Britain.
+'''
 
-*The interactive plot takes some time to load, if you want to use it, press the `Show` button below, and wait some seconds:
+'''
+In the plot above, we can explore the map with the top 100 MPAs in Great Britain. As we can see the most popular place is in the middle of England, but in general the places are distributed evenly across the United Kingdom.
+
+*The interactive plot takes some time to load, if you want to use it, press the `Show` button below, and wait a few seconds:
 '''
 if st.button('Show'):
      #st.write('Why hello there')
