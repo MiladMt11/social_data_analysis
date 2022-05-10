@@ -147,13 +147,24 @@ In this section, we try to use machine learning models in order to predict the t
 '''
 
 '''
-At first we wanted to try to predict whether an area is MPA or control, based on some other characteristics of a Flickr posting. By doing some preprocess to the dataset df3, we decided to try predict the treatment column based on the Social related data we have, and these are the number of views, faves, comments, country, continent and the number of words in tags and description(since we need numbers for the machine learning model). We selected these specific columns, by iterating through the code, and we decided that these are the columns that do not bias the method. In a previous iteration we also used the time columns(year, month, day, weekday, hour), but the results were suspiciously good, and we realised that the dataset is biased in time variables. Especially the year is biased towards the MPA treatment, because as we saw in temporal data, in 2017, we miss many data about control areas, so the algorithm could easily classify data from 2017 as MPA.
+At first we wanted to try to predict whether an area is MPA or control, based on some other characteristics of a Flickr posting. By doing some preprocess to the dataset, we decided to try predict the treatment based on the Social related data we have, and these are the number of views, faves, comments, country, continent and the number of words in tags and description(since we need numbers for the machine learning model).
 '''
 
 st.image("figs/feature importance 1.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 
 '''
 In order to see more precisely, which features are the most important for the prediction, we created the plot above, containing the overall importance of each feature. By that figure, we confirm that the description is the most important factor with 25%. Then, the country is also quite important with 20%. The rest social features are between 10% and 15%, while the continent is the least important feature with less than 10% of importance.
+'''
+
+'''
+Prediction Error: 43.03 %
+Accuracy score:  56.97 %
+Precision score:  71.09 %
+Recall score:  58.0 %
+'''
+
+'''
+Above, we can see the results of our prediction. The results are not very promising for a robust machine learning task, but with an accuracy score of ~57%, we are satisfied enough. With this accuracy, it is clear to us there is a connection between the treatment of the area, and the social features('count_views', 'count_faves', 'count_comments', 'tags', 'description'). So we confirm that the treatment of an area impacts its popularity on Flickr as it was mentioned before.
 '''
 
 
