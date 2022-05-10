@@ -169,6 +169,7 @@ As we can see in the plot below, the Flickr users, are posting mostly pictures f
 '''
 # MPA count by continent
 
+fig = plt.figure(figsize=(10, 4))
 sns.set_theme(style="whitegrid")
 ax = sns.barplot(x=d.continent.value_counts().keys(), y=d.continent.value_counts().values, data=d)
 plt.xticks(rotation = 90)
@@ -186,7 +187,8 @@ d_country = d.groupby(['country'])[['WDPA_PID']].count().rename({'WDPA_PID':'cou
 d_country = d_country[d_country['count'] > 100]
 
 #plot
-plt.figure(figsize = (12,6))
+
+fig = plt.figure(figsize = (12,6))
 sns.set_theme(style="whitegrid")
 ax = sns.barplot(x='country', y='count', data=d_country)
 plt.xticks(rotation = 90)
