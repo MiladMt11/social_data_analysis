@@ -8,12 +8,10 @@ st.image("images.jpg", caption=None, width=None, use_column_width="always", clam
 
 st.markdown("# How do people interact with the Marine Protected Areas?")
 
-'''
-Supplementary material:
+st.markdown("#### Supplementary material:")
 
-    -Explainer notebook on Nbviewer
-    -Datasets on Google Drive
-'''
+st.markdown("    *Explainer notebook on Nbviewer *Datasets on Google Drive")
+
         
 #st.markdown("## Introduction")
 '''
