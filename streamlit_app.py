@@ -111,12 +111,10 @@ if st.button('Show'):
     print(source_code)
     components.html(source_code, height = 600)
 
-'''
 
 '''
-
-
-
+There is a very high concentration of photos in England, perhaps because England is the biggest user of Flickr among the English-speaking countries and because it has a lot of MPA as we saw before. In addition to England, the main areas are Europe, North America, Australia and South East Asia. As mentionned previously, these areas might contain most of the English-speaking users of Flick and contain a high number of MPA. Other locations such as Latin America and Africa might be touristic locations for these English-speaking users. This heatmap might therefore indicate where people travel to along the coasts.
+'''
 
 #st.header("test html import")
 
@@ -125,9 +123,6 @@ source_code = HtmlFile.read()
 print(source_code)
 components.html(source_code, height = 600)
 
-'''
-There is a very high concentration of photos in England, perhaps because England is the biggest user of Flickr among the English-speaking countries and because it has a lot of MPA as we saw before. In addition to England, the main areas are Europe, North America, Australia and South East Asia. As mentionned previously, these areas might contain most of the English-speaking users of Flick and contain a high number of MPA. Other locations such as Latin America and Africa might be touristic locations for these English-speaking users. This heatmap might therefore indicate where people travel to along the coasts.
-'''
 
 #st.header("test html import")
 
