@@ -7,6 +7,13 @@ st.set_page_config(page_title="Marine Protected Areas", page_icon="🌊", layout
 st.image("images.jpg", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 
 st.markdown("# How do people interact with the Marine Protected Areas?")
+
+'''
+Supplementary material:
+
+    -Explainer notebook on Nbviewer
+    -Datasets on Google Drive
+'''
         
 #st.markdown("## Introduction")
 '''
