@@ -113,7 +113,7 @@ if st.button('Show'):
 
 
 '''
-There is a very high concentration of photos in England, perhaps because England is the biggest user of Flickr among the English-speaking countries and because it has a lot of MPA as we saw before. In addition to England, the main areas are Europe, North America, Australia and South East Asia. As mentionned previously, these areas might contain most of the English-speaking users of Flick and contain a high number of MPA. Other locations such as Latin America and Africa might be touristic locations for these English-speaking users. This heatmap might therefore indicate where people travel to along the coasts.
+In the heatmap below, there is a very high concentration of photos in England, perhaps because England is the biggest user of Flickr among the English-speaking countries and because it has a lot of MPA as we saw before. In addition to England, the main areas are Europe, North America, Australia and South East Asia. As mentionned previously, these areas might contain most of the English-speaking users of Flick and contain a high number of MPA. Other locations such as Latin America and Africa might be touristic locations for these English-speaking users. This heatmap might therefore indicate where people travel to along the coasts.
 '''
 
 #st.header("test html import")
@@ -141,6 +141,13 @@ It shows that through the year, the spread of photos in the world gradually decr
 
 
 st.markdown("### Machine Learning")
+st.markdown("#### Predicting the treatment of a photo")
+
+'''
+At this point we wanted to apply some machine learning tasks to our dataset. At first we wanted to try to predict whether an area is MPA or control, based on some other characteristics of a Flickr posting. By doing some preprocess to the dataset df3, we decided to try predict the treatment column based on the Social related data we have, and these are the number of views, faves, comments, country, continent and the number of words in tags and description(since we need numbers for the machine learning model). We selected these specific columns, by iterating through the code, and we decided that these are the columns that do not bias the method. In a previous iteration we also used the time columns(year, month, day, weekday, hour), but the results were suspiciously good, and we realised that the dataset is biased in time variables. Especially the year is biased towards the MPA treatment, because as we saw in temporal data, in 2017, we miss many data about control areas, so the algorithm could easily classify data from 2017 as MPA.
+'''
+
+
 '''
 By the analysis above we confirm that the treatment of an area impacts its popularity on Flickr.MPAs are in
 '''
