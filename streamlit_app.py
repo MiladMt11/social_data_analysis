@@ -147,7 +147,7 @@ In this section, we try to use machine learning models in order to predict the t
 '''
 
 '''
-At first we wanted to try to predict whether an area is MPA or control, based on some other characteristics of a Flickr posting. By doing some preprocess to the dataset, we decided to try predict the treatment based on the Social related data we have, and these are the number of views, faves, comments, country, continent and the number of words in tags and description(since we need numbers for the machine learning model).
+At first we wanted to try to predict whether an area is MPA or control, based on some other characteristics of a Flickr posting. By doing some preprocess to the dataset, we decided to try predict the treatment based on the social related data we have, and these are the number of views, faves, comments, country, continent and the number of words in tags and description(since we need numbers for the machine learning model).
 '''
 
 st.image("figs/feature importance 1.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
@@ -157,14 +157,7 @@ In order to see more precisely, which features are the most important for the pr
 '''
 
 '''
-Prediction Error: 43.03 %
-Accuracy score:  56.97 %
-Precision score:  71.09 %
-Recall score:  58.0 %
-'''
-
-'''
-Above, we can see the results of our prediction. The results are not very promising for a robust machine learning task, but with an accuracy score of ~57%, we are satisfied enough. With this accuracy, it is clear to us there is a connection between the treatment of the area, and the social features('count_views', 'count_faves', 'count_comments', 'tags', 'description'). So we confirm that the treatment of an area impacts its popularity on Flickr as it was mentioned before.
+The results from our model (with an accuracy score of ~57%) are good enough to prove that there is indeed a connection between the treatment of the area, and the social features('count_views', 'count_faves', 'count_comments', 'tags', 'description'). So we confirm that the treatment of an area impacts its popularity on Flickr as it was mentioned in [1].
 '''
 
 
