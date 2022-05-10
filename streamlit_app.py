@@ -19,43 +19,33 @@ By using the datasets from the article mentioned above, we have:
 * 1M+ photo descriptions (including time and location) with 14 variables (124 MB)
 * Additional datasets related to protected areas
 
-Our dataset consists of more than 13000 locations for marine protected areas (13262 different WDPA_PID).
+The dataset consists of more than 13000 locations for marine protected areas (13262 different WDPA_PID).
 As we can see in the plot below, the Flickr users, are mostly posting pictures from Europe and Central Asia:
 '''
-
 st.image("figs/count by continent.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 
 '''
-
-'''
-st.image("figs/area vs continent.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
-'''
-In terms of countries, most Marine Protected Areas are Breat Britain's territories, then Swedish, and then USA's: '''
+In terms of countries, most Marine Protected Areas are Great Britain's territories, then Swedish, and then USA's: '''
 st.image("figs/count by country.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 '''
-This is a bit surprising, but a reason is that many Great Britain's territories, are small islands in remote areas, across all the globe. A secondary reason is that Britain, Sweden and USA, seem like they have been engeged more with their Marine Areas, and Protect them better than other countries. '''
-'''
-ABNJ PLOT COMMENTS '''
-# ABNJ PLOT
-
-'''
-COUNTRIES AREA PLOT COMMENTS '''
-'''
-MPA, CONTROL COUNT Comments
-'''
+This is a bit surprising, but a reason is that many Great Britain's territories, are small islands in remote areas, across all the globe, due to their colonial history. A secondary reason is that Britain, Sweden and USA, seem like they have been engaged more with their Marine Areas, and protect them better than other countries. '''
 
 
-st.markdown("## Data Analysis")
+st.image("figs/mean area by country.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 '''
-Text for data analysis
+As it can be seen in the plot above, we tried to show top 30 countries with the biggest marine protected areas. Most of the places with the highest area are islands which are overseas territories of other countries like UK, France etc.
+The box plot reveals that most of the locations are very small and are less than 100 $km^2$. Going further to the details of the plots above and taking into account that only a couple of countries with high number of MPA locations are shown in the 'Mean Area by Country (top 30)' and also considering low amount of mean area of those countries, it can be concluded areas in countries with high number of MPA locations, are rather small places.'''
+
+
+st.image("figs/area vs continent.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+'''
+From what we have seen in the previous plots, Areas Beyond National Jurisdiction (ABNJ) had the least number of protected areas among all the continents, while on the other hand, on the plots above ABNJ has the biggest locations with MPA areas with the mean of 60000 $km^2$. With further investigation in the dataset it is revealed there is only 2 vast areas located in ABNJ. Sub-Saharan Africa and East Asia & Pacific with the mean area of 10000 and almost 5000, are the other 2 continents with big marine protected areas respectively.
 '''
 
 
-
-st.markdown("### Temporal Data")
+st.markdown("### When do people visit coastal areas?")
 '''
-Text for Temporal data
-'''
+Let's do a temporal analysis of the data and see how often people go to coastal areas and take pictures and post them on Flickr. In this section, we analyze the number of photos taken in 2017, 2018, and 2019, in each month of the year, days of the month, weekday, and hour of the day. The below plot is interactive, which means that you can explore the dataset by yourself.'''
 # Temporal plots using Bokeh
 
 
@@ -66,9 +56,11 @@ components.html(source_code, height = 600)
 
 
 
-st.markdown("### Spatial Data")
+st.markdown("### Where Flickr users frequently going?")
 '''
-Text for spatial data
+The plot below, present us the MP areas where people are visiting the most. By the color of the area, we are able to understand how many posts have been made from there.
+
+As we can see in the map below, the biggest (in terms of area) MPAs, are small island in the middle of the Oceans, and some ABNJs. Thus, from their colors, we observe that they do not have many postings made from those areas. Specifically, the areas with a big amount of posts, are so small, that we cannot distinguish them in the global map, and we need to zoom in, in order to find them. Below, we created an interactive map, where we can see the top 100 (in terms of postings) areas in the Great Britain.
 '''
 st.image("figs/Choropleth map.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 
