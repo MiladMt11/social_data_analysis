@@ -9,3 +9,4 @@ bokeh==2.4.1
 pyreadr
 seaborn
 folium
+streamlit_folium
