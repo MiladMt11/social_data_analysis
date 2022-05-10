@@ -141,6 +141,11 @@ It shows that through the year, the spread of photos in the world gradually decr
 
 
 st.markdown("### Machine Learning")
+
+'''
+In this section, we try to use machine learning models in order to predict 2 main features of the photos in the data set. First, we try to predict the treatment of each photo (whether the photo is taken in 'MPA' or 'control' area) and in the second part we want to forcast popularity of a photo based on number of views.
+'''
+
 st.markdown("#### Predicting the treatment of a photo")
 
 '''
