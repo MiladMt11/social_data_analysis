@@ -156,16 +156,48 @@ st.image("images.jpg", caption=None, width=None, use_column_width="always", clam
 This website is here to introduce you to Marine protected areas and guide you through the Flickr dataset about the MPAs...
 
 """
-st.markdown("# Do we (Flickr people) like Marine Protected Areas more than other Areas? And how can we help in their preservation?")
+st.markdown("# Do Flickr people like Marine Protected Areas more than other Areas? And how can we help in their preservation?")
         
 #st.markdown("## Introduction")
 '''
-Marine protected areas (MPAs) are advocated as a key tool to manage the restoration and sustainable use of the oceans[1]. For the scope of this project we used the datasets from the article [OneEarth: Marine Protected Areas provide more cultural ecosystem services than other adjacent coastal areas](https://data.mendeley.com/datasets/dmk97w5vrr/1?fbclid=IwAR1uZzFUyJAfMBtbBFNPJ-Dn28Qi3l3blThaEPDsgH9DUHO96DZCeUfse-E), and they include information about Flickr posts, that were made in Marine Protexted Areas (MPAs) around the globe, but also posts that were made in control areas (areas with similar characteristics as MPAs, but are not MPAs). So for each Marine Protected Area, a control area near it exists. 
+Marine protected areas (MPAs) are advocated as a key tool to manage the restoration and sustainable use of the oceans[1]. For the scope of this project we used the [datasets](https://data.mendeley.com/datasets/dmk97w5vrr/1?fbclid=IwAR1uZzFUyJAfMBtbBFNPJ-Dn28Qi3l3blThaEPDsgH9DUHO96DZCeUfse-E) from the article [OneEarth: Marine Protected Areas provide more cultural ecosystem services than other adjacent coastal areas](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3720309), and they include information about Flickr posts, that were made in Marine Protected Areas (MPAs) around the globe, but also posts that were made in control areas (areas with similar characteristics as MPAs, but are not MPAs). So for each Marine Protected Area, a control area near it exists with similar characteristics. 
 '''
-st.markdown("## Basic statistics")
+st.markdown("## What Marine Protected Areas (MPAs) are actually?")
 '''
-Text for basic stats
+Our dataset consists of more than 13000 locations for marine protected areas (13262 different WDPA_PID).
+As we can see in the plot below, the Flickr users, are posting mostly pictures from Europe and Central Asia:
 '''
+# MPA count by continent
+
+sns.set_theme(style="whitegrid")
+ax = sns.barplot(x=d.continent.value_counts().keys(), y=d.continent.value_counts().values, data=d)
+plt.xticks(rotation = 90)
+plt.title('Count by Continent')
+plt.xlabel('Continent')
+plt.ylabel('Count')
+plt.show()
+
+'''
+In terms of countries, most Marine Protected Areas are Breat Britain's territories, then Swedish, and then USA's: '''
+
+# MPA count by country
+
+d_country = d.groupby(['country'])[['WDPA_PID']].count().rename({'WDPA_PID':'count'}, axis = 1).sort_values('count', ascending = False).reset_index()
+d_country = d_country[d_country['count'] > 100]
+
+#plot
+plt.figure(figsize = (12,6))
+sns.set_theme(style="whitegrid")
+ax = sns.barplot(x='country', y='count', data=d_country)
+plt.xticks(rotation = 90)
+plt.title('Count by Country (countries with more than 100 records)')
+plt.xlabel('Country')
+plt.ylabel('Count')
+plt.show()
+
+'''
+This is a bit surprising, but a reason is that many Great Britain's territories, are small islands in remote areas, across all the globe. A secondary reason is that Britain, Sweden and USA, seem like they have been engeged more with their Marine Areas, and Protect them better than other countries. '''
+
 st.markdown("## Data Analysis")
 '''
 Text for data analysis
