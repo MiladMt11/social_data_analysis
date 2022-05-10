@@ -192,7 +192,7 @@ The score is the coefficient of determination R2 which is between 0 and 1. The s
 
 st.markdown("### Conclusion")
 '''
-Text for conclusion
+In this project, we were able to explore a substantial amount of data from the social media app Flickr. Through the process of exploring, we saw the Marine Protected Areas  in which continents, and which countries were more popular within Flickr users. Additionally to that, we saw that the biggest in terms of area MPAs, were not much popular amongst people. In contrary, Flickr users were visiting mostly small areas close to big cities. This indicates, also some biases our data contain. Furthermore, some nice interactive plots, allowed us to view the temporal patterns of the MPA related postings. Additionally, we saw another flaw of the dataset, towards the datetimes of our postings and their many existing default values, that make the results less reliable. Moreover, the exploration of spatial data, can reveal many interesting results, and there we observed that the big MPAs (in terms of km^2) were not much visited. Also, specifically about the UK, we saw how evenly the most areas are distributed in the map. Over and above that, we saw a beautiful movie with the amount of post globally through time. Lastly, some machinelearning was involved. The results from our machine learning models, were surprisingly good, and we found a connection between the social features of the data, and the Marine Protected Areas.
 '''
 
 st.markdown("### References")
