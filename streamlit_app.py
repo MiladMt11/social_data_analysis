@@ -29,6 +29,10 @@ from bokeh.models.widgets import Tabs, Panel
 import folium
 from folium.plugins import HeatMap, HeatMapWithTime
 from streamlit_folium import st_folium, folium_static
+#import streamlit as st
+import streamlit.components.v1 as components
+
+
 
 st.set_page_config(page_title="Marine Protected Areas", page_icon="🌊", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
@@ -366,15 +370,33 @@ st.image("UKMPAs.jpg", caption=None, width=None, use_column_width="always", clam
 '''
 
 '''
+#NEEDS TOO MUCH TIME
 # Heatmap for all photos
 
-map_hooray = folium.Map(location=[0, 0], 
-                        zoom_start = 1)
-heat_df = df3[['longitude', 'latitude']]
-heat_data = [[row['latitude'],row['longitude']] for index, row in heat_df.iterrows()]
-HeatMap(heat_data, radius = 9, blur = 5, min_opacity = 0.2).add_to(map_hooray)
-folium_static(map_hooray)
+#map_hooray = folium.Map(location=[0, 0], 
+#                        zoom_start = 1)
+#heat_df = df3[['longitude', 'latitude']]
+#heat_data = [[row['latitude'],row['longitude']] for index, row in heat_df.iterrows()]
+#HeatMap(heat_data, radius = 9, blur = 5, min_opacity = 0.2).add_to(map_hooray)
+#folium_static(map_hooray)
 
+
+#SO WE DOWNLOADED THEM IN HTML AND EMBED THEM FROM THE HTML FILE
+
+st.header("test html import")
+
+HtmlFile = open("static.html", 'r', encoding='utf-8')
+source_code = HtmlFile.read() 
+print(source_code)
+components.html(source_code, height = 600)
+
+
+st.header("test html import")
+
+HtmlFile = open("interactive.html", 'r', encoding='utf-8')
+source_code = HtmlFile.read() 
+print(source_code)
+components.html(source_code, height = 600)
 
 st.markdown("### Machine Learning")
 '''
