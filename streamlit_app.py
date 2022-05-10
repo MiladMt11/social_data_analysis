@@ -10,7 +10,7 @@ st.markdown("# How do people interact with the Marine Protected Areas?")
 
 st.markdown("#### Supplementary material:")
 
-'''[Explainer notebook and Datasets on Google Drive](https://drive.google.com/drive/folders/1WqG49lnxhoP4N1XJZt5GtAPtZMcRJHSN?usp=sharing)'''
+'''* [Explainer notebook and Datasets on Google Drive](https://drive.google.com/drive/folders/1WqG49lnxhoP4N1XJZt5GtAPtZMcRJHSN?usp=sharing)'''
 
         
 #st.markdown("## Introduction")
