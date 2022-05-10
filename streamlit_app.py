@@ -100,7 +100,7 @@ components.html(source_code, height = 600)
 
 st.markdown("### Machine Learning")
 '''
-Text for machine learning
+By the analysis above we confirm that the treatment of an area impacts its popularity on Flickr.MPAs are in
 '''
 st.markdown("### Conclusion")
 '''
