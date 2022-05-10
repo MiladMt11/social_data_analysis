@@ -27,7 +27,7 @@ from bokeh.plotting import figure
 from bokeh.layouts import layout
 from bokeh.models.widgets import Tabs, Panel
 
-st.set_page_config(page_title="Marine Protected Areas", page_icon="🌊", layout="wide", initial_sidebar_state="auto", menu_items=None)
+st.set_page_config(page_title="Marine Protected Areas", page_icon="🌊", layout="centered", initial_sidebar_state="auto", menu_items=None)
 
 #Data preprocessing
 # read the second file
@@ -160,7 +160,7 @@ st.markdown("# Do we (Flickr people) like Marine Protected Areas more than other
         
 #st.markdown("## Introduction")
 '''
-Marine protected areas (MPAs) are advocated as a key tool to manage the restoration and sustainable use of the oceans[1]. For the scope of this project we used the datasets from that [paper](https://data.mendeley.com/datasets/dmk97w5vrr/1?fbclid=IwAR1uZzFUyJAfMBtbBFNPJ-Dn28Qi3l3blThaEPDsgH9DUHO96DZCeUfse-E), and they include information about Flickr posts, that were made in Marine Protexted Areas (MPAs) around the globe, but also posts that were made in control areas (areas with similar characteristics as MPAs, but are not MPAs). So for each Marine Protected Area, a control area near it exists. 
+Marine protected areas (MPAs) are advocated as a key tool to manage the restoration and sustainable use of the oceans[1]. For the scope of this project we used the datasets from the article [OneEarth: Marine Protected Areas provide more cultural ecosystem services than other adjacent coastal areas](https://data.mendeley.com/datasets/dmk97w5vrr/1?fbclid=IwAR1uZzFUyJAfMBtbBFNPJ-Dn28Qi3l3blThaEPDsgH9DUHO96DZCeUfse-E), and they include information about Flickr posts, that were made in Marine Protexted Areas (MPAs) around the globe, but also posts that were made in control areas (areas with similar characteristics as MPAs, but are not MPAs). So for each Marine Protected Area, a control area near it exists. 
 '''
 st.markdown("## Basic statistics")
 '''
