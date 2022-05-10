@@ -131,10 +131,19 @@ There is a very high concentration of photos in England, perhaps because England
 
 #st.header("test html import")
 
+'''
+Now, let's take a look at the heatmap with time combines temporal and spatial information:
+'''
+
 HtmlFile = open("htmls/interactive.html", 'r', encoding='utf-8')
 source_code = HtmlFile.read() 
 print(source_code)
 components.html(source_code, height = 600)
+
+'''
+It shows that through the year, the spread of photos in the world gradually decreases: in January, there are photos all over the world and in December, they are concentrated in the English-speaking world (Europe, North America, Australia and South East Asia). Indeed, the users might stay in their home country as the days get shorter and colder at the end of the year and might start traveling abroad when the weather gets warmer. The same January boom of photos that we have noticed during the temporal analysis can be seen in the movie.
+'''
+
 
 st.markdown("### Machine Learning")
 '''
