@@ -212,7 +212,7 @@ fig = plt.figure(figsize = (12,6))
 mean_area_continent = df2.groupby('continent').agg('mean').sort_values(by = 'area', ascending = False).reset_index()[['continent', 'area']]
 
 # Plotting
-plt.figure(figsize = (12,6))
+fig = plt.figure(figsize = (12,6))
 sns.set_theme(style="whitegrid")
 ax = sns.barplot(x = 'continent', y = 'area', data = mean_area_continent)
 plt.xticks(rotation = 90)
@@ -239,7 +239,6 @@ legend = [a + ': ' + b for a, b in zip(abv, fname)]
 
 # Plotting
 fig = plt.figure(figsize = (12,6))
-plt.figure(figsize = (12,6))
 sns.set_theme(style="whitegrid")
 ax = sns.barplot(x = 'country', y = 'area', data = mean_area_country)
 plt.xticks(rotation = 90)
@@ -368,14 +367,14 @@ st.image("UKMPAs.jpg", caption=None, width=None, use_column_width="always", clam
 
 '''
 # Heatmap for all photos
-#fig = plt.figure(figsize = (10,5))
-map_hooray = folium.Map(location=[0, 0], 
-                        zoom_start = 1)
-heat_df = df3[['longitude', 'latitude']]
-heat_data = [[row['latitude'],row['longitude']] for index, row in heat_df.iterrows()]
-HeatMap(heat_data, radius = 9, blur = 5, min_opacity = 0.2).add_to(map_hooray)
+
+#map_hooray = folium.Map(location=[0, 0], 
+#                        zoom_start = 1)
+#heat_df = df3[['longitude', 'latitude']]
+#heat_data = [[row['latitude'],row['longitude']] for index, row in heat_df.iterrows()]
+#HeatMap(heat_data, radius = 9, blur = 5, min_opacity = 0.2).add_to(map_hooray)
 #map_hooray
-st_folium(map_hooray)
+#st_data = st_folium(map_hooray)
 st.markdown("### Machine Learning")
 '''
 Text for machine learning
