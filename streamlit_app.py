@@ -86,7 +86,9 @@ st.image("figs/histogram between dec and jan.png", caption=None, width=None, use
 '''
 Such a big and abrupt difference in the number of photos between December and January might be due to the hypothesis that the default month at which a photo was taken is set to January on Flickr.
 '''
-
+'''
+aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+'''
 st.markdown("### Where Flickr users frequently going?")
 '''
 The plot below, present us the MP areas where people are visiting the most. By the color of the area, we are able to understand how many posts have been made from there.
