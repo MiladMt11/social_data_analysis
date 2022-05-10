@@ -22,9 +22,11 @@ Our dataset consists of more than 13000 locations for marine protected areas (13
 As we can see in the plot below, the Flickr users, are posting mostly pictures from Europe and Central Asia:
 '''
 
+st.image("figs/count by continent.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+st.image("figs/area vs continent.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 '''
 In terms of countries, most Marine Protected Areas are Breat Britain's territories, then Swedish, and then USA's: '''
-
+st.image("figs/count by country.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 '''
 This is a bit surprising, but a reason is that many Great Britain's territories, are small islands in remote areas, across all the globe. A secondary reason is that Britain, Sweden and USA, seem like they have been engeged more with their Marine Areas, and Protect them better than other countries. '''
 '''
@@ -52,7 +54,7 @@ Text for Temporal data
 # Temporal plots using Bokeh
 
 
-HtmlFile = open("bokeh.html", 'r', encoding='utf-8')
+HtmlFile = open("htmls/bokeh.html", 'r', encoding='utf-8')
 source_code = HtmlFile.read() 
 print(source_code)
 components.html(source_code, height = 600)
@@ -63,12 +65,15 @@ st.markdown("### Spatial Data")
 '''
 Text for spatial data
 '''
-st.image("MPAs.jpg", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+st.image("figs/Choropleth map.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 
 '''
 Text for UK spatial data
 '''
-st.image("UKMPAs.jpg", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+HtmlFile = open("htmls/GBRplotly.html", 'r', encoding='utf-8')
+source_code = HtmlFile.read() 
+print(source_code)
+components.html(source_code, height = 600)
 
 '''
 
@@ -79,7 +84,7 @@ st.image("UKMPAs.jpg", caption=None, width=None, use_column_width="always", clam
 
 #st.header("test html import")
 
-HtmlFile = open("static.html", 'r', encoding='utf-8')
+HtmlFile = open("htmls/static.html", 'r', encoding='utf-8')
 source_code = HtmlFile.read() 
 print(source_code)
 components.html(source_code, height = 600)
@@ -87,7 +92,7 @@ components.html(source_code, height = 600)
 
 #st.header("test html import")
 
-HtmlFile = open("interactive.html", 'r', encoding='utf-8')
+HtmlFile = open("htmls/interactive.html", 'r', encoding='utf-8')
 source_code = HtmlFile.read() 
 print(source_code)
 components.html(source_code, height = 600)
