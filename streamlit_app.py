@@ -160,6 +160,30 @@ In order to see more precisely, which features are the most important for the pr
 The results from our model (with an accuracy score of ~57%) are good enough to prove that there is indeed a connection between the treatment of the area, and the social features('count_views', 'count_faves', 'count_comments', 'tags', 'description'). So we confirm that the treatment of an area impacts its popularity on Flickr as it was mentioned in [1].
 '''
 
+st.markdown("### What influences the popularity of a photo on Flickr? ")
+
+'''
+The goal here is to understand what makes a photo popular. The popularity of a photo can be measured by its number of views, faves and comments. We would like to choose number of views to be our target variable for the prediction.
+Let's the a look at the variable importance for this prediction:
+
+'''
+
+st.image("figs/feature importance 2.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+
+'''
+The most important predictors of the number of views are the latitude and longitude, which bring more than 50% of the reduction of the criterion, followed by the number of words in the description and the number of tags, the time at which the photo was taken, and finally the country. The treatment and continent are the least important features. We would have expected the treatment to play a bigger role in predicting the number of views, since MPA have more views on average.
+
+
+Here is the results of the prediction:
+
+Score: 0.13
+
+Average absolute difference of the predictions on the test set: 625.92
+
+Average number of views: 778.95
+
+The score is the coefficient of determination R2 which is between 0 and 1. The score of the model on the test set is close to 0, so the model doesn't perform very well. It is confirmed by the value of the average absolute difference of the predictions on the test set, which is aslmost as high as the average number of views.
+'''
 
 st.markdown("### Conclusion")
 '''
