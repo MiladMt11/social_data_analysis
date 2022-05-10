@@ -176,7 +176,7 @@ plt.title('Count by Continent')
 plt.xlabel('Continent')
 plt.ylabel('Count')
 plt.show()
-
+st.pyplot(fig)
 '''
 In terms of countries, most Marine Protected Areas are Breat Britain's territories, then Swedish, and then USA's: '''
 
@@ -194,7 +194,7 @@ plt.title('Count by Country (countries with more than 100 records)')
 plt.xlabel('Country')
 plt.ylabel('Count')
 plt.show()
-
+st.pyplot(fig)
 '''
 This is a bit surprising, but a reason is that many Great Britain's territories, are small islands in remote areas, across all the globe. A secondary reason is that Britain, Sweden and USA, seem like they have been engeged more with their Marine Areas, and Protect them better than other countries. '''
 
