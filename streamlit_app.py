@@ -158,9 +158,9 @@ This website is here to introduce you to Marine protected areas and guide you th
 """
 st.markdown("# Do we (Flickr people) like Marine Protected Areas more than other Areas? And how can we help in their preservation?")
         
-st.markdown("## Introduction")
+#st.markdown("## Introduction")
 '''
-Marine protected areas (MPAs) are advocated as a key tool to manage the restoration and sustainable use of the oceans.[1]
+Marine protected areas (MPAs) are advocated as a key tool to manage the restoration and sustainable use of the oceans[1]. For the scope of this project we used the datasets from that [paper](https://data.mendeley.com/datasets/dmk97w5vrr/1?fbclid=IwAR1uZzFUyJAfMBtbBFNPJ-Dn28Qi3l3blThaEPDsgH9DUHO96DZCeUfse-E), and they include information about Flickr posts, that were made in Marine Protexted Areas (MPAs) around the globe, but also posts that were made in control areas (areas with similar characteristics as MPAs, but are not MPAs). So for each Marine Protected Area, a control area near it exists. 
 '''
 st.markdown("## Basic statistics")
 '''
@@ -248,8 +248,9 @@ st.markdown("### Conclusion")
 Text for conclusion
 '''
 
-st.markdown("### Referrences")
+st.markdown("### References")
 '''
 [1]: Marine Protected Areas provide more cultural ecosystem services than other adjacent coastal areas
 Emily Erskine,1 Rosie Baillie,1 and David Lusseau1
+
 '''
