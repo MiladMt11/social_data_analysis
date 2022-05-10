@@ -162,7 +162,7 @@ st.markdown("# Do Flickr people like Marine Protected Areas more than other Area
 '''
 Marine protected areas (MPAs) are advocated as a key tool to manage the restoration and sustainable use of the oceans[1]. For the scope of this project we used the [datasets](https://data.mendeley.com/datasets/dmk97w5vrr/1?fbclid=IwAR1uZzFUyJAfMBtbBFNPJ-Dn28Qi3l3blThaEPDsgH9DUHO96DZCeUfse-E) from the article [OneEarth: Marine Protected Areas provide more cultural ecosystem services than other adjacent coastal areas](https://papers.ssrn.com/sol3/papers.cfm?abstract_id=3720309), and they include information about Flickr posts, that were made in Marine Protected Areas (MPAs) around the globe, but also posts that were made in control areas (areas with similar characteristics as MPAs, but are not MPAs). So for each Marine Protected Area, a control area near it exists with similar characteristics. 
 '''
-st.markdown("## What Marine Protected Areas (MPAs) are actually?")
+st.markdown("## What Marine Protected Areas (MPAs) actually are ?")
 '''
 Our dataset consists of more than 13000 locations for marine protected areas (13262 different WDPA_PID).
 As we can see in the plot below, the Flickr users, are posting mostly pictures from Europe and Central Asia:
@@ -199,11 +199,92 @@ plt.show()
 st.pyplot(fig)
 '''
 This is a bit surprising, but a reason is that many Great Britain's territories, are small islands in remote areas, across all the globe. A secondary reason is that Britain, Sweden and USA, seem like they have been engeged more with their Marine Areas, and Protect them better than other countries. '''
+'''
+ABNJ PLOT COMMENTS '''
+# ABNJ PLOT
+fig = plt.figure(figsize = (12,6))
+# Creating a bar plot continent vs mean area
+
+# Grouping data
+mean_area_continent = df2.groupby('continent').agg('mean').sort_values(by = 'area', ascending = False).reset_index()[['continent', 'area']]
+
+# Plotting
+plt.figure(figsize = (12,6))
+sns.set_theme(style="whitegrid")
+ax = sns.barplot(x = 'continent', y = 'area', data = mean_area_continent)
+plt.xticks(rotation = 90)
+plt.title('Mean Area by Continent')
+plt.xlabel('Continent')
+plt.ylabel('Mean Area')
+plt.grid()
+plt.legend(['ABNJ: Areas Beyond National Jurisdiction'])
+plt.show()
+st.pyplot(fig)
+'''
+COUNTRIES AREA PLOT COMMENTS '''
+# COUNTRIES AREA PLOT 
+# Creating a bar plot for top 30 countries with highest mean area
+
+# Grouping data
+mean_area_country = df2.groupby('country').mean().sort_values(by = 'area', ascending = False).reset_index()[['country', 'area']][:30]
+
+# List of legends
+abv = list(mean_area_country['country'].values)
+fname = ['South Georgia and the South Sandwich Islands', 'French Southern Territories', 'United States Minor Outlying Islands', 'Pitcairn', 'Cook Islands', 'British Indian Ocean Territory', 'Saint Barthelemy, Guadeloupe, Saint Martin, Martinique', 'Greenland', 'Saint Helena', 'Areas Beyond National Jurisdiction', 'New Caledonia', 'Northern Mariana Islands', 'Norfolk Island', 'Chile', 'Ecuador', 'Kazakhstan', 'Western Sahara', 'Palau', 'Seychelles', 'Mauritania', 'Netherlands, Germany, Denmark', 'Svalbard and Jan Mayen', 'American Samoa', 'Brazil', 'Colombia', 'Russia', 'Argentina', 'Republic of the Congo', 'Namibia', 'Australia']
+legend = [a + ': ' + b for a, b in zip(abv, fname)]
+
+
+# Plotting
+fig = plt.figure(figsize = (12,6))
+plt.figure(figsize = (12,6))
+sns.set_theme(style="whitegrid")
+ax = sns.barplot(x = 'country', y = 'area', data = mean_area_country)
+plt.xticks(rotation = 90)
+plt.title('Mean Area by Country (for top 30)')
+plt.xlabel('Country')
+plt.ylabel('Mean Area')
+plt.legend(legend, bbox_to_anchor=(1.04,0.5), loc="center left", borderaxespad=0)
+plt.grid()
+plt.show()
+st.pyplot(fig)
+'''
+MPA, CONTROL COUNT Comments
+'''
+# Comparison of the number of photos in total coming from MPA and control
+fig = plt.figure(figsize = (10,5))
+df3.treatment.value_counts().plot.bar()
+plt.xticks(rotation = 0)
+plt.xlabel('Treatment')
+plt.ylabel('Total number of photos')
+st.pyplot(fig)
+# Mean number of views, faves and comments for each treatment
+
+fig, ax = plt.subplots(1, 3, figsize = (15, 3))
+labels = ['views', 'faves', 'comments']
+for i in range(3):
+    df3.groupby(['treatment'])['count_{}'.format(labels[i])].mean().plot.bar(ax = ax[i])
+    ax[i].set_ylabel('Mean number of ' + labels[i])
+    ax[i].set_xlabel('Treatment')
+    ax[i].tick_params(axis = 'x', rotation = 0)
+st.pyplot(fig)
 
 st.markdown("## Data Analysis")
 '''
 Text for data analysis
 '''
+
+# Plot numbers of samples vs. year
+
+# Groupping the data
+year_df = df3_con.groupby(['year', 'treatment']).count()[['id']].rename({'id':'count'}, axis = 1).reset_index()
+# Plotting
+fig = plt.figure(figsize = (10,5))
+sns.set_theme(style="whitegrid")
+ax = sns.barplot(x='year', y='count', hue = 'treatment', data=year_df)
+plt.title('N. samples by year')
+plt.ylabel('N. of samples')
+plt.show()
+st.pyplot(fig)
 st.markdown("### Temporal Data")
 '''
 Text for Temporal data
@@ -273,6 +354,25 @@ st.markdown("### Spatial Data")
 '''
 Text for spatial data
 '''
+st.image("MPAs.jpg", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+
+'''
+Text for UK spatial data
+'''
+st.image("UKMPAs.jpg", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+
+'''
+
+'''
+# Heatmap for all photos
+fig = plt.figure(figsize = (10,5))
+map_hooray = folium.Map(location=[0, 0], 
+                        zoom_start = 1)
+heat_df = df3[['longitude', 'latitude']]
+heat_data = [[row['latitude'],row['longitude']] for index, row in heat_df.iterrows()]
+HeatMap(heat_data, radius = 9, blur = 5, min_opacity = 0.2).add_to(map_hooray)
+map_hooray
+st.pyplot(fig)
 st.markdown("### Machine Learning")
 '''
 Text for machine learning
