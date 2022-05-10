@@ -92,7 +92,7 @@ st.image("figs/histogram between dec and jan.png", caption=None, width=None, use
 Such a big and abrupt difference in the number of photos between December and January might be due to the hypothesis that the default month at which a photo was taken is set to January on Flickr.
 '''
 
-st.markdown("### Where Flickr users frequently going?")
+st.markdown("### Where do Flickr users frequently go?")
 '''
 The plot below, present us the MP areas where people are visiting the most. By the color of the area, we are able to understand how many posts have been made from there.
 
@@ -192,7 +192,7 @@ The score is the coefficient of determination R2 which is between 0 and 1. The s
 
 st.markdown("### Conclusion")
 '''
-In this project, we were able to explore a substantial amount of data from the social media app Flickr. Through the process of exploring, we saw the Marine Protected Areas  in which continents, and which countries were more popular within Flickr users. Additionally to that, we saw that the biggest in terms of area MPAs, were not much popular amongst people. In contrary, Flickr users were visiting mostly small areas close to big cities. This indicates, also some biases our data contain. Furthermore, some nice interactive plots, allowed us to view the temporal patterns of the MPA related postings. Additionally, we saw another flaw of the dataset, towards the datetimes of our postings and their many existing default values, that make the results less reliable. Moreover, the exploration of spatial data, can reveal many interesting results, and there we observed that the big MPAs (in terms of km^2) were not much visited. Also, specifically about the UK, we saw how evenly the most areas are distributed in the map. Over and above that, we saw a beautiful movie with the amount of post globally through time. Lastly, some machinelearning was involved. The results from our machine learning models, were surprisingly good, and we found a connection between the social features of the data, and the Marine Protected Areas.
+In this project, we were able to explore a substantial amount of data from the social media app Flickr. Through the process of exploring, we saw the Marine Protected Areas in which continents, and which countries were more popular among Flickr users. Additionally, we saw the biggest area MPAs were not much popular amongst people. On the contrary, Flickr users were visiting mostly small areas close to big cities. This indicates, also some biases our data contain. Furthermore, some nice interactive plots, allowed us to view the temporal patterns of the MPA-related postings. Additionally, we saw another flaw of the dataset, towards the date times of our postings and their many existing default values, that make the results less reliable. Moreover, the exploration of spatial data can reveal many interesting results, and there we observed that the big MPAs (in terms of km^2) were not much visited. Also, specifically in the UK, we saw how evenly most areas are distributed on the map. Over and above that, we saw a beautiful movie with the number of posts globally through time. Lastly, some machine learning was involved. The results from our machine learning models were surprisingly good, and we found a connection between the social features of the data and the Marine Protected Areas.
 '''
 
 st.markdown("### References")
@@ -202,11 +202,11 @@ Emily Erskine,1 Rosie Baillie,1 and David Lusseau1
 
 '''
 
-
-
-
-
-
 '''
+
+
+
+
+
 *This webpage was created by Lucie Fontaine, Milad Taghikhani and Charidimos Vradis as part of the final project for the course Social Data Analysis at DTU*
 '''
