@@ -10,8 +10,8 @@ st.markdown("# How do people interact with the Marine Protected Areas?")
 
 st.markdown("#### Supplementary material:")
 
-st.markdown(">(https://raw.githubusercontent.com/suneman/socialdata2022/main/files/data1.tsv), [Explainer notebook on Nbviewer]")
-st.markdown(">(https://raw.githubusercontent.com/suneman/socialdata2022/main/files/data2.tsv), [Datasets on Google Drive]")
+'''(https://raw.githubusercontent.com/suneman/socialdata2022/main/files/data1.tsv), [Explainer notebook on Nbviewer]'''
+'''(https://raw.githubusercontent.com/suneman/socialdata2022/main/files/data2.tsv), [Datasets on Google Drive]'''
 
         
 #st.markdown("## Introduction")
