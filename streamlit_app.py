@@ -140,22 +140,23 @@ It shows that through the year, the spread of photos in the world gradually decr
 '''
 
 
-st.markdown("### Machine Learning")
+st.markdown("### Is there a difference between MPA and control in how people interact with photos on Flickr? ")
 
 '''
-In this section, we try to use machine learning models in order to predict 2 main features of the photos in the data set. First, we try to predict the treatment of each photo (whether the photo is taken in 'MPA' or 'control' area) and in the second part we want to forcast popularity of a photo based on number of views.
+In this section, we try to use machine learning models in order to predict the treatment of each photo (whether the photo is taken in 'MPA' or 'control' area).
 '''
 
-st.markdown("#### Predicting the treatment of a photo")
-
 '''
-At this point we wanted to apply some machine learning tasks to our dataset. At first we wanted to try to predict whether an area is MPA or control, based on some other characteristics of a Flickr posting. By doing some preprocess to the dataset df3, we decided to try predict the treatment column based on the Social related data we have, and these are the number of views, faves, comments, country, continent and the number of words in tags and description(since we need numbers for the machine learning model). We selected these specific columns, by iterating through the code, and we decided that these are the columns that do not bias the method. In a previous iteration we also used the time columns(year, month, day, weekday, hour), but the results were suspiciously good, and we realised that the dataset is biased in time variables. Especially the year is biased towards the MPA treatment, because as we saw in temporal data, in 2017, we miss many data about control areas, so the algorithm could easily classify data from 2017 as MPA.
+At first we wanted to try to predict whether an area is MPA or control, based on some other characteristics of a Flickr posting. By doing some preprocess to the dataset df3, we decided to try predict the treatment column based on the Social related data we have, and these are the number of views, faves, comments, country, continent and the number of words in tags and description(since we need numbers for the machine learning model). We selected these specific columns, by iterating through the code, and we decided that these are the columns that do not bias the method. In a previous iteration we also used the time columns(year, month, day, weekday, hour), but the results were suspiciously good, and we realised that the dataset is biased in time variables. Especially the year is biased towards the MPA treatment, because as we saw in temporal data, in 2017, we miss many data about control areas, so the algorithm could easily classify data from 2017 as MPA.
 '''
 
+st.image("figs/feature importance 1.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 
 '''
-By the analysis above we confirm that the treatment of an area impacts its popularity on Flickr.MPAs are in
+In order to see more precisely, which features are the most important for the prediction, we created the plot above, containing the overall importance of each feature. By that figure, we confirm that the description is the most important factor with 25%. Then, the country is also quite important with 20%. The rest social features are between 10% and 15%, while the continent is the least important feature with less than 10% of importance.
 '''
+
+
 st.markdown("### Conclusion")
 '''
 Text for conclusion
