@@ -53,10 +53,11 @@ The above figure shows that Areas Above National Jurisdiction (ABNJ) have MPAs w
 Indeed, in addition to preserving biodiversity, MPA might bring cultural ecosystems services to humans [1]. The following bar plots show that MPA photos have more views, faves and comments on average, suggesting that MPAs have a higher impact on people than other areas.
 '''
 st.image("figs/Mean no views faves comments fortreatment.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
-'''
+
 st.markdown("### When do people visit coastal areas?")
 '''
-Let's do a temporal analysis of the data and see how often people go to coastal areas and take pictures and post them on Flickr. In this section, we analyze the number of photos taken in 2017, 2018, and 2019, in each month of the year, days of the month, weekday, and hour of the day. The below plot is interactive, which means that you can explore the dataset by yourself.'''
+Let's do a temporal analysis of the data and see how often people go to coastal areas and take pictures and post them on Flickr. In this section, we analyze the number of photos taken in 2017, 2018, and 2019, in each month of the year, days of the month, weekday, and hour of the day. The below plot is interactive, which means that you can explore the dataset by yourself.
+'''
 # Temporal plots using Bokeh
 
 
