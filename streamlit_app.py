@@ -49,13 +49,11 @@ The box plot reveals that most of the locations are very small and are less than
 st.image("figs/area vs continent.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 '''
 The above figure shows that Areas Above National Jurisdiction (ABNJ) have MPAs with the highest mean area, 60000 $km^2$. However, the total area covered by MPAs in ABNJ is the smallest because as we have seen in the previous plots, ABNJ has the least number of MPAs among all the continents. Indeed, it is more difficult to create MPAs in ABNJ because of the complex legal framework in place. That is why only 1.18% of ABNJ, which constitutes more than half of the global ocean, is protected [2]. However, international discussions are underway to simplify the creation of MPAs in ABNJ.
-'''
 
+Indeed, in addition to preserving biodiversity, MPA might bring cultural ecosystems services to humans [1]. The following bar plots show that MPA photos have more views, faves and comments on average, suggesting that MPAs have a higher impact on people than other areas.
+'''
 st.image("figs/Mean no views faves comments fortreatment.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 '''
-MPA photos have more views, faves and comments on average. This means that MPAs have a higher impact on people than other areas.
-'''
-
 st.markdown("### When do people visit coastal areas?")
 '''
 Let's do a temporal analysis of the data and see how often people go to coastal areas and take pictures and post them on Flickr. In this section, we analyze the number of photos taken in 2017, 2018, and 2019, in each month of the year, days of the month, weekday, and hour of the day. The below plot is interactive, which means that you can explore the dataset by yourself.'''
@@ -91,7 +89,7 @@ As you can see above, there is an abnormally high number of photos taken at exac
 st.image("figs/histogram between 1 and 2 january.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 
 '''
-Let's go further and check number of photos in different days of last month of 2018 and first month of 2019
+Let's go further and check the number of photos in the last month of 2018 and first month of 2019.
 '''
 
 st.image("figs/histogram between dec and jan.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
@@ -189,9 +187,9 @@ The most important predictors of the number of views are the latitude and longit
 
 Here are the results of the prediction:
 
-*Score: 0.13
-*Average absolute difference of the predictions on the test set: 625.92
-*Average number of views: 778.95
+- Score: 0.13
+- Average absolute difference of the predictions on the test set: 625.92
+- Average number of views: 778.95
 
 The score is the coefficient of determination R2 which is between 0 and 1. The score of the model on the test set is close to 0, so the model doesn't perform very well. It is confirmed by the value of the average absolute difference of the predictions on the test set, which is aslmost as high as the average number of views.
 '''
@@ -209,6 +207,7 @@ st.markdown("### References")
 '''
 [1] Marine Protected Areas provide more cultural ecosystem services than other adjacent coastal areas
 Emily Erskine,1 Rosie Baillie,1 and David Lusseau1
+
 [2] Protected pnalet: https://www.protectedplanet.net/en/thematic-areas/marine-protected-areas
 
 '''
