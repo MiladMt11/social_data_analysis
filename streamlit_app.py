@@ -209,7 +209,7 @@ st.markdown("### References")
 [1] Marine Protected Areas provide more cultural ecosystem services than other adjacent coastal areas
 Emily Erskine,1 Rosie Baillie,1 and David Lusseau1
 
-[2] Protected pnalet: https://www.protectedplanet.net/en/thematic-areas/marine-protected-areas
+[2] Marine Protected Areas on Protected Planet: https://www.protectedplanet.net/en/thematic-areas/marine-protected-areas
 
 '''
 
