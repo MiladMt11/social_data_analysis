@@ -21,14 +21,18 @@ Marine protected areas (MPAs) are advocated as a key tool to manage the restorat
 st.markdown("## What is the dataset that we are dealing with?")
 '''
 By using the datasets from the article mentioned above, we have:
-* 1M+ photo descriptions (including time and location) with 14 variables (124 MB)
+* 1M+ English photo descriptions (including time and location) with 14 variables (124 MB)
 * Additional datasets related to protected areas
 
 The dataset consists of more than 13000 locations for marine protected areas (13262 different WDPA_PID).
-As we can see in the plot below, the Flickr users, are mostly posting pictures from Europe and Central Asia:
+In the plot below, we can see that more than half of the marine protected areas are located in Europe & Central Asia, after that East Asia & Pacific is the second continent with biggest share of marine protected areas with roughly 2500 locations. North America with roughly 1500 locations and Latin America & Caribbean with 1000 locations are next in the plot. The rest of the cantinents have less than 1000 MPA locations.
 '''
 st.image("figs/count by continent.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 
+'''
+This is reflected in the number of Flickr photos per day in each continent. The continents that contain more MPAs also have more photos per day. 
+'''
+st.image("figs/Histogram no photos each continent.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 '''
 In terms of countries, most Marine Protected Areas are Great Britain's territories, then Swedish, and then USA's: '''
 st.image("figs/count by country.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
@@ -44,9 +48,13 @@ The box plot reveals that most of the locations are very small and are less than
 
 st.image("figs/area vs continent.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 '''
-From what we have seen in the previous plots, Areas Beyond National Jurisdiction (ABNJ) had the least number of protected areas among all the continents, while on the other hand, on the plots above ABNJ has the biggest locations with MPA areas with the mean of 60000 $km^2$. With further investigation in the dataset it is revealed there is only 2 vast areas located in ABNJ. Sub-Saharan Africa and East Asia & Pacific with the mean area of 10000 and almost 5000, are the other 2 continents with big marine protected areas respectively.
+The above figure shows that Areas Above National Jurisdiction (ABNJ) have MPAs with the highest mean area, 60000 $km^2$. However, the total area covered by MPAs in ABNJ is the smallest because as we have seen in the previous plots, ABNJ has the least number of MPAs among all the continents. Indeed, it is more difficult to create MPAs in ABNJ because of the complex legal framework in place. That is why only 1.18% of ABNJ, which constitutes more than half of the global ocean, is protected [2]. However, international discussions are underway to simplify the creation of MPAs in ABNJ.
 '''
 
+st.image("figs/Mean no views faves comments fortreatment.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
+'''
+MPA photos have more views, faves and comments on average. This means that MPAs have a higher impact on people than other areas.
+'''
 
 st.markdown("### When do people visit coastal areas?")
 '''
@@ -118,7 +126,7 @@ if st.button('Show'):
 
 
 '''
-In the heatmap below, there is a very high concentration of photos in England, perhaps because England is the biggest user of Flickr among the English-speaking countries and because it has a lot of MPA as we saw before. In addition to England, the main areas are Europe, North America, Australia and South East Asia. As mentionned previously, these areas might contain most of the English-speaking users of Flick and contain a high number of MPA. Other locations such as Latin America and Africa might be touristic locations for these English-speaking users. This heatmap might therefore indicate where people travel to along the coasts.
+In the heatmap below, there is a very high concentration of photos in England, perhaps because England is the biggest user of Flickr among the English-speaking countries and because it has a lot of MPA as we saw before. In addition to England, the main areas are Europe, North America, Australia and South East Asia. As mentionned previously, these areas might contain most of the English-speaking users of Flick and contain a high number of MPA. Other locations such as Latin America and Africa might be touristic locations for these English-speaking users. This heatmap might therefore indicate where people travel to along the coasts. Feel free to zoom on the heatmap to discover the most photographed places in the country of your choice.
 '''
 
 #st.header("test html import")
@@ -132,7 +140,7 @@ components.html(source_code, height = 600)
 #st.header("test html import")
 
 '''
-Now, let's take a look at the heatmap with time combines temporal and spatial information:
+Now, let's take a look at the heatmap with time which combines temporal and spatial information about the monthly number of photos from 2017 to 2019:
 '''
 
 HtmlFile = open("htmls/interactive.html", 'r', encoding='utf-8')
@@ -158,7 +166,7 @@ At first we wanted to try to predict whether an area is MPA or control, based on
 st.image("figs/feature importance 1.png", caption=None, width=None, use_column_width="always", clamp=False, channels="RGB", output_format="auto")
 
 '''
-In order to see more precisely, which features are the most important for the prediction, we created the plot above, containing the overall importance of each feature. By that figure, we confirm that the description is the most important factor with 25%. Then, the country is also quite important with 20%. The rest social features are between 10% and 15%, while the continent is the least important feature with less than 10% of importance.
+In order to see more precisely, which features are the most important for the prediction, we created the plot above, containing the overall importance of each feature. By that figure, we confirm that the description is the most important factor with 25%. Then, the country is also quite important with 20%. The social features are between 10% and 15%, while the continent is the least important feature with less than 10% of importance.
 '''
 
 '''
@@ -179,26 +187,29 @@ st.image("figs/feature importance 2.png", caption=None, width=None, use_column_w
 The most important predictors of the number of views are the latitude and longitude, which bring more than 50% of the reduction of the criterion, followed by the number of words in the description and the number of tags, the time at which the photo was taken, and finally the country. The treatment and continent are the least important features. We would have expected the treatment to play a bigger role in predicting the number of views, since MPA have more views on average.
 
 
-Here is the results of the prediction:
+Here are the results of the prediction:
 
-Score: 0.13
-
-Average absolute difference of the predictions on the test set: 625.92
-
-Average number of views: 778.95
+*Score: 0.13
+*Average absolute difference of the predictions on the test set: 625.92
+*Average number of views: 778.95
 
 The score is the coefficient of determination R2 which is between 0 and 1. The score of the model on the test set is close to 0, so the model doesn't perform very well. It is confirmed by the value of the average absolute difference of the predictions on the test set, which is aslmost as high as the average number of views.
 '''
 
 st.markdown("### Conclusion")
 '''
-In this project, we were able to explore a substantial amount of data from the social media app Flickr. Through the process of exploring, we saw the Marine Protected Areas in which continents, and which countries were more popular among Flickr users. Additionally, we saw the biggest area MPAs were not much popular amongst people. On the contrary, Flickr users were visiting mostly small areas close to big cities. This indicates, also some biases our data contain. Furthermore, some nice interactive plots, allowed us to view the temporal patterns of the MPA-related postings. Additionally, we saw another flaw of the dataset, towards the date times of our postings and their many existing default values, that make the results less reliable. Moreover, the exploration of spatial data can reveal many interesting results, and there we observed that the big MPAs (in terms of km^2) were not much visited. Also, specifically in the UK, we saw how evenly most areas are distributed on the map. Over and above that, we saw a beautiful movie with the number of posts globally through time. Lastly, some machine learning was involved. The results from our machine learning models were surprisingly good, and we found a connection between the social features of the data and the Marine Protected Areas.
+In this project, we gained insight about how people interact with coastal areas through the Flickr social media. First, we learned about MPA, their distribution around the globe and how it affects their popularity, and their difference in popularity compared to adjacent control areas. In particular, we noticed that the UK has a lot of MPAs in overseas territories and this might be due to its colonial history. On the contrary, ABNJ has the least MPAs, perhaps because it is more difficult to create MPAs in international waters. These areas could be worth protecting because they offer cultural benefits to humans, as suggested by MPAs’ higher popularity on Flickr compared to adjacent coastal areas.
+
+Then, the temporal and spatial analysis revealed human patterns of visiting coastal areas. People are more often visiting coastal areas and taking photos during the spring, the weekend, and the middle of the day. As winter approaches, people tend to stop traveling abroad, as suggested by the high concentration of photos in the English-speaking regions of the world. Additionally, the choropleth map showed that smaller MPAs near cities were more visited than bigger overseas locations, perhaps because visitors might mostly live in cities. 
+
+Lastly, the classification task showed that the treatment (whether it is protected or not) of a coastal area might depend on social factors: how people talk about them, and their popularity, suggesting that protecting a coastal area might have a beneficial impact on people. The regression model, which gave less reliable results, showed that the popularity of a photo depends mostly on its location. 
 '''
 
 st.markdown("### References")
 '''
-[1]: Marine Protected Areas provide more cultural ecosystem services than other adjacent coastal areas
+[1] Marine Protected Areas provide more cultural ecosystem services than other adjacent coastal areas
 Emily Erskine,1 Rosie Baillie,1 and David Lusseau1
+[2] Protected pnalet: https://www.protectedplanet.net/en/thematic-areas/marine-protected-areas
 
 '''
 
