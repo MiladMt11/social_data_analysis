@@ -20,6 +20,15 @@ This project aims to investigate and analyze a dataset of pictures of [Marine Pr
 4. Predictive analysis and ML modeling to classify photos using RandomForest technique.
 5. Predictive analysis and ML modeling to predict the number of likes.
 
+## Packages & Frameworks
+* scikit-learn
+* GeoPandas
+* Bokeh
+* pandas
+* numpy
+* Plotly
+
+
 ## Data
 The compelte dataset is available [here](https://data.mendeley.com/datasets/dmk97w5vrr/1). Note that we just used a subset of data. The details are mentioned in [the notebook](https://drive.google.com/file/d/1Vs8-y3-WxRNnGx0MvJgGxd7zko2TiCtq/view?usp=drive_link).
 
